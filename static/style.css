@@ -1,0 +1,82 @@
+:root {
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --primary: #8fb3a8; /* Sage Green */
+    --secondary: #5c7a70;
+    --text-color: #2d3436;
+    --accent: #d68c7e; /* Soft Terra Cotta */
+    --shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1, h2 { color: var(--secondary); }
+
+/* Form Styles */
+.form-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+input, button {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+input { flex-grow: 1; }
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover { background-color: var(--secondary); }
+
+/* Book List Styles */
+#book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.book-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    position: relative;
+    border-left: 5px solid var(--primary);
+}
+
+.book-card.loaned { border-left-color: var(--accent); opacity: 0.8; }
+
+.actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-loan { background-color: #a8dadc; color: #333; }
+.btn-delete { background-color: #e63946; color: white; }
